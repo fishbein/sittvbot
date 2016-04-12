@@ -84,7 +84,7 @@ module.exports = (robot) ->
   robot.logger.warning "karma.coffee has merged with plusplus.coffee and moved from hubot-scripts to its own package. Remove it from your hubot-scripts.json and see https://github.com/ajacksified/hubot-plusplus for upgrade instructions"
 
   karma = new Karma robot
-  allow_self = process.env.KARMA_ALLOW_SELF or "false"
+  allow_self = false
 
   robot.hear /(\S+[^+:\s])[: ]*\+\+(\s|$)/, (msg) ->
     subject = msg.match[1].toLowerCase()
