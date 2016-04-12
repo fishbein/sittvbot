@@ -84,13 +84,13 @@ module.exports = (robot) ->
   robot.logger.warning "karma.coffee has merged with plusplus.coffee and moved from hubot-scripts to its own package. Remove it from your hubot-scripts.json and see https://github.com/ajacksified/hubot-plusplus for upgrade instructions"
 
   karma = new Karma robot
-  allow_self = process.env.KARMA_ALLOW_SELF or "true"
+  allow_self = process.env.KARMA_ALLOW_SELF or "false"
 
   robot.hear /(\S+[^+:\s])[: ]*\+\+(\s|$)/, (msg) ->
     subject = msg.match[1].toLowerCase()
     if allow_self is true or msg.message.user.name.toLowerCase() != subject
       karma.increment subject
-      msg.send "#{subject} #{karma.incrementResponse()} (Karma: #{karma.get(subject)})"
+      msg.send "#{subject} #{karma.incrementResponse()} (Total: #{karma.get(subject)})"
     else
       msg.send msg.random karma.selfDeniedResponses(msg.message.user.name)
 
@@ -98,7 +98,7 @@ module.exports = (robot) ->
     subject = msg.match[1].toLowerCase()
     if allow_self is true or msg.message.user.name.toLowerCase() != subject
       karma.decrement subject
-      msg.send "#{subject} #{karma.decrementResponse()} (Karma: #{karma.get(subject)})"
+      msg.send "#{subject} #{karma.decrementResponse()} (Total: #{karma.get(subject)})"
     else
       msg.send msg.random karma.selfDeniedResponses(msg.message.user.name)
 
