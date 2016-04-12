@@ -88,7 +88,7 @@ module.exports = (robot) ->
 
   robot.hear /(\S+[^+:\s])[: ]*\+\+(\s|$)/, (msg) ->
     subject = msg.match[1].toLowerCase()
-    if allow_self is true or msg.message.user.name.toLowerCase() != subject
+    if msg.message.user.name.toLowerCase() != subject
       karma.increment subject
       msg.send "#{subject} #{karma.incrementResponse()} (Total: #{karma.get(subject)})"
     else
@@ -96,7 +96,7 @@ module.exports = (robot) ->
 
   robot.hear /(\S+[^-:\s])[: ]*--(\s|$)/, (msg) ->
     subject = msg.match[1].toLowerCase()
-    if allow_self is true or msg.message.user.name.toLowerCase() != subject
+    if msg.message.user.name.toLowerCase() != subject
       karma.decrement subject
       msg.send "#{subject} #{karma.decrementResponse()} (Total: #{karma.get(subject)})"
     else
@@ -104,7 +104,7 @@ module.exports = (robot) ->
 
   robot.respond /karma empty ?(\S+[^-\s])$/i, (msg) ->
     subject = msg.match[1].toLowerCase()
-    if allow_self is true or msg.message.user.name.toLowerCase() != subject
+    if msg.message.user.name.toLowerCase() != subject
       karma.kill subject
       msg.send "#{subject} has had its karma scattered to the winds."
     else
