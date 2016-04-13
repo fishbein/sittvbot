@@ -18,7 +18,13 @@
     "hubot-scripts": "^2.16.2",
     "hubot-shipit": "^0.2.0",
     "hubot-slack": "^3.4.2",
-    "hubot-plusplus": "1.1.7"
+    "hubot-plusplus": "1.1.7",
+    "hubot-thank-you": "^0.0.3",
+    "hubot-tell": "*",
+    "hubot-help": "*",
+    "hubot-darts": "1.0.x",
+    "hubot-seen": "*",
+    "hubot-fliptable": "*"
   },
   "engines": {
     "node": "0.10.x"
