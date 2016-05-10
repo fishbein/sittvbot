@@ -15,5 +15,6 @@
   "hubot-help",
   "hubot-darts",
   "hubot-seen",
-  "hubot-fliptable"
+  "hubot-fliptable",
+  "hubot-heroku-keepalive"
 ]
