@@ -20,7 +20,9 @@ module.exports = (robot) ->
    robot.respond /sign out equipment/i, (res) ->
      res.reply("You'd like to sign out equipment?")
      robot.respond /yes/i, (res1) ->
-       res1.reply("Fantastic!")
+       res1.reply("Fantastic! What can I get for you? (Type all the equipment you'll need.)")
+       robot.respond (equipment) ->
+         equipment.reply("Alrighty. I'll get you #{equipment}!")
 
 
   #
