@@ -21,7 +21,7 @@ module.exports = (robot) ->
      res.reply("You'd like to sign out equipment?")
      robot.respond /yes/i, (res1) ->
        res1.reply("Fantastic! What can I get for you? (Type all the equipment you'll need starting with 'I'll need:'.)")
-       robot.respond /I'll need (.*)/i (res2) ->
+       robot.respond /I'll need (.*)/i, (res2) ->
          equipment = res.match[1]
          res2.reply("Alrighty. I'll get you #{equipment}!")
 
