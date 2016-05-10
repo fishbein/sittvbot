@@ -10,12 +10,12 @@
 
 module.exports = (robot) ->
 
-   robot.respond /sign out (.*) equipment for (.*) production from (.*) to (.*) at (.*) location/i, (res) ->
-    equipment = res.match[1]
-    fromDate = res.match[2]
-    toDate = res.match[3]
-    location = res.match[4]
-    res.reply("Great! You'd like #{equipment} at #{location}. I'll email Ian with that information, user.")
+  #  robot.respond /sign out (.*) equipment for (.*) production from (.*) to (.*) at (.*) location/i, (res) ->
+  #   equipment = res.match[1]
+  #   fromDate = res.match[2]
+  #   toDate = res.match[3]
+  #   location = res.match[4]
+  #   res.reply("Great! You'd like #{equipment} at #{location}. I'll email Ian with that information, user.")
 
 
 
