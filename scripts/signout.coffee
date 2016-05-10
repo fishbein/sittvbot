@@ -15,8 +15,12 @@ module.exports = (robot) ->
     fromDate = res.match[2]
     toDate = res.match[3]
     location = res.match[4]
-    res.reply("Great! You'd like #{equipment} at #{location}. I'll email Ian with that information, #{user.name}")
+    res.reply("Great! You'd like #{equipment} at #{location}. I'll email Ian with that information.")
 
+  robot.respond /sign out equipment/i, (res) ->
+    res.reply("You'd like to sign out equipment?")
+    robot.respond /yes/i, (res1) ->
+      res1.reply("Fantastic!")
 
 
   #
